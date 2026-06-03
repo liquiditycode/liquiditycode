@@ -1,14 +1,18 @@
 // === PRELOADER ===
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
-    setTimeout(() => {
-        preloader.classList.add('hide');
+    if (preloader) {
         setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 600);
-    }, 1000); 
+            preloader.classList.add('hide');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 600);
+        }, 1000); 
+    }
     
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    
     updateTime();
     setInterval(updateTime, 1000);
 });
@@ -30,24 +34,26 @@ function updateTime() {
 const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    html.classList.add('dark');
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-} else {
-    html.classList.remove('dark');
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-}
-
-themeToggle.addEventListener('click', () => {
-    html.classList.toggle('dark');
-    if (html.classList.contains('dark')) {
-        localStorage.theme = 'dark';
+if (themeToggle) {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
         themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     } else {
-        localStorage.theme = 'light';
+        html.classList.remove('dark');
         themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     }
-});
+
+    themeToggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        if (html.classList.contains('dark')) {
+            localStorage.theme = 'dark';
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            localStorage.theme = 'light';
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+    });
+}
 
 // === MOBILE MENU ===
 const btn = document.getElementById('mobile-menu-btn');
@@ -55,15 +61,17 @@ const menu = document.getElementById('mobile-menu');
 const closeBtn = document.getElementById('close-menu');
 const links = document.querySelectorAll('.mobile-link');
 
-const toggleMenu = () => {
-    const isOpen = menu.style.opacity === '1';
-    menu.style.opacity = isOpen ? '0' : '1';
-    menu.style.pointerEvents = isOpen ? 'none' : 'auto';
-};
+if (btn && menu && closeBtn) {
+    const toggleMenu = () => {
+        const isOpen = menu.style.opacity === '1';
+        menu.style.opacity = isOpen ? '0' : '1';
+        menu.style.pointerEvents = isOpen ? 'none' : 'auto';
+    };
 
-btn.addEventListener('click', toggleMenu);
-closeBtn.addEventListener('click', toggleMenu);
-links.forEach(link => link.addEventListener('click', toggleMenu));
+    btn.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
+    links.forEach(link => link.addEventListener('click', toggleMenu));
+}
 
 // === SCROLL TO TOP & ACTIVE NAVIGATION (ScrollSpy) ===
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
@@ -71,10 +79,12 @@ const sections = document.querySelectorAll('.section-spy');
 const navLinks = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollToTopBtn.classList.remove('translate-y-20', 'opacity-0');
-    } else {
-        scrollToTopBtn.classList.add('translate-y-20', 'opacity-0');
+    if (scrollToTopBtn) {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+        } else {
+            scrollToTopBtn.classList.add('translate-y-20', 'opacity-0');
+        }
     }
 
     let current = '';
@@ -95,9 +105,11 @@ window.addEventListener('scroll', () => {
     });
 });
 
-scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
 
 // === PROJECT FILTER LOGIC ===
 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -171,6 +183,7 @@ const mImage = document.getElementById('modal-image');
 const mDesc = document.getElementById('modal-desc');
 
 function openModal(data) {
+    if(!modal) return;
     mTitle.textContent = data.title;
     mCategory.textContent = data.category;
     mImage.src = data.image;
@@ -178,17 +191,22 @@ function openModal(data) {
 
     modal.classList.remove('hidden');
     setTimeout(() => {
-        modalBackdrop.classList.remove('opacity-0');
-        modalContent.classList.remove('scale-95', 'opacity-0');
-        modalContent.classList.add('scale-100', 'opacity-100');
+        if(modalBackdrop) modalBackdrop.classList.remove('opacity-0');
+        if(modalContent) {
+            modalContent.classList.remove('scale-95', 'opacity-0');
+            modalContent.classList.add('scale-100', 'opacity-100');
+        }
     }, 10);
     document.body.style.overflow = 'hidden'; 
 }
 
 function hideModal() {
-    modalBackdrop.classList.add('opacity-0');
-    modalContent.classList.remove('scale-100', 'opacity-100');
-    modalContent.classList.add('scale-95', 'opacity-0');
+    if(!modal) return;
+    if(modalBackdrop) modalBackdrop.classList.add('opacity-0');
+    if(modalContent) {
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+    }
     
     setTimeout(() => {
         modal.classList.add('hidden');
@@ -208,8 +226,8 @@ triggers.forEach(trigger => {
     });
 });
 
-closeModal.addEventListener('click', hideModal);
-modalBackdrop.addEventListener('click', hideModal);
+if (closeModal) closeModal.addEventListener('click', hideModal);
+if (modalBackdrop) modalBackdrop.addEventListener('click', hideModal);
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') hideModal();
 });
@@ -219,6 +237,7 @@ const toastContainer = document.getElementById('toast-container');
 const contactForm = document.getElementById('contact-form');
 
 function showToast(message, type = 'success') {
+    if (!toastContainer) return;
     const toast = document.createElement('div');
     
     const icon = type === 'success' ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-exclamation-circle"></i>';
@@ -238,21 +257,48 @@ function showToast(message, type = 'success') {
     }, 3000);
 }
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = e.target.querySelector('button');
-    const originalText = btn.innerHTML;
-    
-    btn.innerHTML = '<i class="fas fa-circle-notch animate-spin"></i> Mengirim...';
-    btn.disabled = true;
+// INTEGRASI UTAMA WEB3FORMS AJAX + SIMULASI LOADING NYATA
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Menghentikan reload halaman bawaan form HTML
+        
+        const btn = e.target.querySelector('button');
+        const originalText = btn.innerHTML;
+        
+        // Mengubah tombol menjadi teks & ikon loading animasi spin
+        btn.innerHTML = '<i class="fas fa-circle-notch animate-spin"></i> Mengirim...';
+        btn.disabled = true;
 
-    setTimeout(() => {
-        showToast('Pesan berhasil dikirim! Kami akan segera menghubungi Anda.');
-        e.target.reset();
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-    }, 1500);
-});
+        // Ambil data input form
+        const formData = new FormData(contactForm);
+
+        // Mengirimkan data via background API ke server Web3Forms
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                // Berhasil terkirim ke email
+                showToast('Pesan berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
+                contactForm.reset();
+            } else {
+                // Ada kendala di Web3Forms (misal key salah)
+                showToast(json.message || 'Terjadi kesalahan sistem.', 'error');
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            showToast('Gagal mengirim pesan. Periksa koneksi internet Anda.', 'error');
+        })
+        .finally(() => {
+            // Mengembalikan tombol kirim ke status semula
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        });
+    });
+}
 
 // === SCROLL REVEAL ANIMATION [MODERN] ===
 const observerOptions = {
@@ -303,7 +349,5 @@ spotlightCards.forEach(card => {
         
         card.style.setProperty('--mouse-x', `${x}px`);
         card.style.setProperty('--mouse-y', `${y}px`);
-
-        
     });
 });
