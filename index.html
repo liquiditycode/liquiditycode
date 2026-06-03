@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Liquidity Code Indonesia | Grup Analisa Market</title>
-<meta name="description" content="Liquidity Code Indonesia adalah grup diskusi trading yang membahas liquidity, struktur market, dan analisa market.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://liquiditycode.vercel.app/">
+    <meta name="description" content="Liquidity Code Indonesia adalah grup diskusi trading yang membahas liquidity, struktur market, dan analisa market.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://liquiditycode.vercel.app/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Khai">
     <meta name="theme-color" content="#2563eb">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -64,15 +60,12 @@
         }
     </script>
 
-    <!-- External Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-500 selection:bg-primary selection:text-white overflow-x-hidden">
 
-    <!-- [NEW] Noise Texture Overlay -->
     <div class="fixed inset-0 z-[1] bg-noise pointer-events-none opacity-40 mix-blend-overlay"></div>
 
-    <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 z-[9999] bg-slate-50 dark:bg-dark flex items-center justify-center">
         <div class="flex flex-col items-center gap-4">
             <div class="relative w-16 h-16">
@@ -83,14 +76,11 @@
         </div>
     </div>
 
-    <!-- Toast Notification Container -->
     <div id="toast-container" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 pointer-events-none"></div>
 
-    <!-- Background Elements -->
     <div class="fixed inset-0 z-0 bg-grid-pattern pointer-events-none"></div>
     <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none opacity-50 dark:opacity-20 z-0"></div>
 
-    <!-- Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-6">
         <nav class="bg-white/70 dark:bg-surface/70 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-full px-6 py-3 flex items-center gap-8 shadow-sm transition-all duration-300 w-full max-w-4xl justify-between md:justify-start reveal-on-scroll">
             
@@ -98,7 +88,6 @@
                 Liquidity <span class="text-primary">code</span>
             </a>
 
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-6 text-sm font-medium ml-auto relative z-20" id="desktop-menu">
                 <a href="#home" class="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn">Home</a>
                 <a href="#Info" class="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn">Info</a>
@@ -116,7 +105,6 @@
         </nav>
     </header>
 
-    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
         <a href="#home" class="text-3xl font-display font-bold mobile-link hover:text-primary hoverable">Home</a>
         <a href="#Info" class="text-3xl font-display font-bold mobile-link hover:text-primary hoverable">Info</a>
@@ -127,7 +115,6 @@
         </button>
     </div>
 
-    <!-- Hero Section -->
     <section id="home" class="section-spy relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div class="container mx-auto px-6 relative z-10 max-w-6xl">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -140,7 +127,6 @@
                         <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">31-01-2025</span>
                     </div>
 
-                    <!-- Masked Text Reveal Animation -->
                     <h1 class="font-display text-5xl md:text-7xl lg:text-[6rem] font-bold leading-[1.1] md:leading-[0.9] tracking-tight mb-6 text-slate-900 dark:text-white">
                         <div class="hero-heading-line overflow-hidden">
                             <span class="block">Tentang</span>
@@ -181,14 +167,12 @@
         </div>
     </section>
 
-    <!-- Info Section -->
     <section id="Info" class="section-spy py-20 bg-white/50 dark:bg-white/5 border-y border-slate-200 dark:border-white/5 backdrop-blur-sm relative z-10">
         <div class="container mx-auto px-6 max-w-6xl">
             <h2 class="font-display text-4xl font-bold text-slate-900 dark:text-white mb-12 reveal-on-scroll">Info <span class="text-primary">Liquidity code</span></h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[500px]">
                 
-                <!-- Card 1 -->
                 <div class="bento-card spotlight-card col-span-1 md:col-span-2 bg-slate-100 dark:bg-surface border border-slate-200 dark:border-white/10 rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group hoverable reveal-on-scroll">
                     <div class="spotlight-overlay"></div>
                     <div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
@@ -204,7 +188,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="bento-card spotlight-card col-span-1 bg-slate-900 text-white rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden hoverable reveal-on-scroll delay-100">
                     <div class="spotlight-overlay"></div>
                     <div class="absolute top-0 right-0 w-32 h-32 bg-primary blur-3xl opacity-30 rounded-full"></div>
@@ -221,7 +204,6 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="bento-card spotlight-card col-span-1 bg-white dark:bg-surface border border-slate-200 dark:border-white/10 rounded-3xl p-8 flex flex-col justify-center gap-6 hoverable reveal-on-scroll delay-200">
                     <div class="spotlight-overlay"></div>
                     <div class="relative z-10">
@@ -236,7 +218,6 @@
                     </div>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="bento-card spotlight-card col-span-1 md:col-span-2 bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden hoverable reveal-on-scroll delay-300">
                     <div class="spotlight-overlay"></div>
                     <i class="fas fa-quote-right absolute top-8 right-8 text-6xl text-white/10"></i>
@@ -250,16 +231,13 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="section-spy py-24 relative z-10">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-16 reveal-on-scroll">
                 <h2 class="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
                     spesial<span class="text-primary"> vip</span>
                 </h2>
-                <p class="text-slate-500 max-w-lg mx-auto">
-                    sesuatu yang didapatkan vip
-                </p>
+                <p class="text-slate-500 max-w-lg mx-auto">sesuatu yang didapatkan vip</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -290,15 +268,13 @@
                     </div>
                     <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white mb-3 relative z-10">Risk to Reward (RR)</h3>
                     <p class="text-slate-500 text-sm leading-relaxed relative z-10">
-                        Kami tidak mengambil setiap peluang yang muncul. Kami hanya mengirimkan sinyal jika potensi keuntungan (Reward) minimal dua kali lipat dari risiko (Risk).
-Artinya: Jika Anda rugi 10 pips, saat menang Anda akan mendapatkan 20 pips atau lebih
+                        Kami tidak mengambil setiap peluang yang muncul. Kami hanya mengirimkan sinyal jika potensi keuntungan (Reward) minimal dua kali lipat dari risiko (Risk). Artinya: Jika Anda rugi 10 pips, saat menang Anda akan mendapatkan 20 pips atau lebih
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SECTION TESTIMONI (NEW) ===== -->
     <section id="testimoni" class="section-spy py-16 bg-transparent relative z-10">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-10 reveal-on-scroll">
@@ -310,40 +286,21 @@ Artinya: Jika Anda rugi 10 pips, saat menang Anda akan mendapatkan 20 pips atau 
                 </p>
             </div>
 
-            <!-- 4 Foto Tersusun Kebawah (Vertikal) -->
             <div class="flex flex-col gap-6 max-w-lg mx-auto">
-                
-                <!-- Foto 1 -->
                 <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-lg reveal-on-scroll">
-                    <img src="https://cdn.phototourl.com/free/2026-05-18-f7da4599-68cd-47ba-ac9e-aeae994aad72.jpg" 
-                         alt="Testimoni Liquidity Code 1" 
-                         class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                    <img src="https://cdn.phototourl.com/free/2026-05-18-f7da4599-68cd-47ba-ac9e-aeae994aad72.jpg" alt="Testimoni Liquidity Code 1" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
                 </div>
-
-                <!-- Foto 2 -->
                 <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-lg reveal-on-scroll delay-100">
-                    <img src="https://cdn.phototourl.com/member/2026-05-19-2f4107c0-8b00-4898-ab25-c7b7fb6f01ae.jpg" 
-                         alt="Testimoni Liquidity Code 2" 
-                         class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                    <img src="https://cdn.phototourl.com/member/2026-05-19-2f4107c0-8b00-4898-ab25-c7b7fb6f01ae.jpg" alt="Testimoni Liquidity Code 2" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
                 </div>
-
-                <!-- Foto 3 -->
                 <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-lg reveal-on-scroll delay-200">
-                    <img src="https://cdn.phototourl.com/member/2026-05-18-bc958bdd-337b-47fc-9c22-2b9a04d3beca.jpg" 
-                         alt="Testimoni Liquidity Code 3" 
-                         class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                    <img src="https://cdn.phototourl.com/member/2026-05-18-bc958bdd-337b-47fc-9c22-2b9a04d3beca.jpg" alt="Testimoni Liquidity Code 3" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
                 </div>
-
-                <!-- Foto 4 -->
                 <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-lg reveal-on-scroll delay-300">
-                    <img src="https://cdn.phototourl.com/member/2026-05-18-0bba5fa1-0b46-4908-aa63-1be9ce76d054.jpg" 
-                         alt="Testimoni Liquidity Code 4" 
-                         class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                    <img src="https://cdn.phototourl.com/member/2026-05-18-0bba5fa1-0b46-4908-aa63-1be9ce76d054.jpg" alt="Testimoni Liquidity Code 4" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
                 </div>
-
             </div>
 
-            <!-- Tombol Kembali Ke Atas -->
             <div class="text-center mt-16 reveal-on-scroll">
                 <a href="#" class="inline-block px-8 py-3 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-sm font-semibold tracking-wide hoverable magnetic-btn focus:outline-none">
                     kembali ke atas
@@ -352,7 +309,6 @@ Artinya: Jika Anda rugi 10 pips, saat menang Anda akan mendapatkan 20 pips atau 
         </div>
     </section>
   
-    <!-- Contact Section -->
     <section id="contact" class="section-spy py-24 md:py-32 relative overflow-hidden bg-slate-100 dark:bg-[#080808]">
         <div class="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
         
@@ -379,18 +335,21 @@ Artinya: Jika Anda rugi 10 pips, saat menang Anda akan mendapatkan 20 pips atau 
                 </div>
 
                 <div class="bg-white dark:bg-surface p-8 rounded-3xl shadow-xl border border-slate-200 dark:border-white/10 reveal-on-scroll delay-300">
-                    <form class="space-y-6" id="contact-form">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6" id="contact-form">
+                        
+                        <input type="hidden" name="access_key" value="b500e768-c0ae-4434-8659-10f2e9a38632">
+
                         <div>
                             <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Name</label>
-                            <input type="text" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white hoverable magnetic-btn" placeholder="Your Name" required>
+                            <input type="text" name="name" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white hoverable magnetic-btn" placeholder="Your Name" required>
                         </div>
                         <div>
                             <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Email</label>
-                            <input type="email" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white hoverable magnetic-btn" placeholder="email@contoh.com" required>
+                            <input type="email" name="email" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white hoverable magnetic-btn" placeholder="email@gmail.com" required>
                         </div>
                         <div>
                             <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">pesan</label>
-                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white hoverable magnetic-btn" placeholder="kirim pesan" required></textarea>
+                            <textarea rows="4" name="message" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white hoverable magnetic-btn" placeholder="kirim pesan" required></textarea>
                         </div>
                         <button type="submit" class="w-full py-4 bg-slate-900 dark:bg-white text-white dark:text-black rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform shadow-lg hoverable magnetic-btn focus:outline-none">
                             kirim pesan
@@ -408,7 +367,6 @@ Artinya: Jika Anda rugi 10 pips, saat menang Anda akan mendapatkan 20 pips atau 
         </div>
     </section>
 
-    <!-- Project Modal Container -->
     <div id="project-modal" class="fixed inset-0 z-[100] hidden">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop"></div>
         <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
@@ -433,9 +391,7 @@ Artinya: Jika Anda rugi 10 pips, saat menang Anda akan mendapatkan 20 pips atau 
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                             <div class="md:col-span-2">
                                 <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">About the Project</h3>
-                                <p id="modal-desc" class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
-                                    Description is here.
-                                </p>
+                                <p id="modal-desc" class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">Description is here.</p>
                             </div>
                             <div class="space-y-6">
                                 <div>
@@ -458,18 +414,15 @@ Artinya: Jika Anda rugi 10 pips, saat menang Anda akan mendapatkan 20 pips atau 
         </div>
     </div>
 
-    <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/620881011915106" target="_blank" aria-label="Chat WhatsApp" class="fixed bottom-8 right-8 z-[60] w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 hoverable magnetic-btn group">
         <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-30 animate-ping"></span>
         <i class="fab fa-whatsapp text-3xl leading-none z-10 group-hover:rotate-12 transition-transform"></i>
     </a>
 
-    <!-- Scroll To Top Button -->
     <button id="scrollToTopBtn" aria-label="Gulir ke Atas" class="fixed bottom-28 right-8 z-50 w-12 h-12 bg-white dark:bg-surface border border-slate-200 dark:border-white/20 rounded-full flex items-center justify-center text-slate-600 dark:text-white shadow-lg translate-y-20 opacity-0 transition-all duration-300 hover:border-primary hover:text-primary hover:-translate-y-1 hoverable focus:outline-none">
         <i class="fas fa-arrow-up"></i>
     </button>
     
-
     <script src="script.js"></script>
 </body>
 </html>
